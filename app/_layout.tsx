@@ -12,7 +12,8 @@ export default function RootLayout() {
       <Stack.Screen 
         name="index" 
         options={{ 
-          title: 'Audio Gallery',
+          title: 'Cozey Leaf',
+          headerShown: false,
           headerStyle: {
             backgroundColor: colorScheme === 'dark' ? '#1D3D47' : '#A1CEDC',
           },
