@@ -7,18 +7,26 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { galleryData } from '@/types/gallery';
 import { useColorScheme } from 'react-native';
+import { useNetworkStatus } from '../components/useNetworkStatus';
 
 /**
  * Main gallery screen component that displays a grid of images
  * Each image is clickable and navigates to a detail view with audio player
  */
 export default function GalleryScreen() {
+  const isConnected = useNetworkStatus();
+  const colorScheme = useColorScheme();
+
+  // Filter items based on connectivity
+  const filteredData = isConnected === false 
+    ? galleryData.filter(item => typeof item.imageUrl === 'number')
+    : galleryData;
+
   /**
    * Renders an individual gallery item
    * @param item The gallery item to render
    */
-  const renderGalleryItem = ({ item }) => (
-    //add code to differentiate between imageUrl if its string or number
+  const renderGalleryItem = ({ item }: { item: { id: string; title: string; imageUrl: string | number } }) => (
     <TouchableOpacity
       style={styles.galleryItem}
       onPress={() => router.push(`/image/${item.id}`)}
@@ -36,22 +44,19 @@ export default function GalleryScreen() {
     </TouchableOpacity>
   );
 
-  const colorScheme = useColorScheme();
-
   return (
-   
     <ThemedView style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.headerContainer}>
-      <ThemedText style={[
-        styles.title,
-        { color: colorScheme === 'dark' ? '#fff' : '#000' }
-      ]}>
-        Cozey Leaf
-      </ThemedText>
-    </View>
+        <ThemedText style={[
+          styles.title,
+          { color: colorScheme === 'dark' ? '#fff' : '#000' }
+        ]}>
+          Cozey Leaf
+        </ThemedText>
+      </View>
       <FlatList
-        data={galleryData}
+        data={filteredData}
         renderItem={renderGalleryItem}
         keyExtractor={(item) => item.id}
         numColumns={2}
