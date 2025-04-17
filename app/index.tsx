@@ -18,6 +18,7 @@ export default function GalleryScreen() {
    * @param item The gallery item to render
    */
   const renderGalleryItem = ({ item }) => (
+    //add code to differentiate between imageUrl if its string or number
     <TouchableOpacity
       style={styles.galleryItem}
       onPress={() => router.push(`/image/${item.id}`)}
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   headerContainer: {
-    paddingTop: 1, // Adjust this value based on your StatusBar height
+    paddingTop: 10, // Adjust this value based on your StatusBar height
     paddingBottom: 20,
     paddingHorizontal: 16,
   },

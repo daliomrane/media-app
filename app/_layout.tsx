@@ -35,12 +35,7 @@ export default function RootLayout() {
       <Stack.Screen 
         name="index" 
         options={{ 
-          //title: 'Cozey Leaf',
           headerShown: false,
-          //headerStyle: {
-          //  backgroundColor: colorScheme === 'dark' ? '#1D3D47' : '#A1CEDC',
-          //},
-          //headerTintColor: colorScheme === 'dark' ? '#fff' : '#000',
         }} 
       />
       <Stack screenOptions={{ 
