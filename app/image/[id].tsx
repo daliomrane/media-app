@@ -9,6 +9,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
 import { galleryData } from '@/types/gallery';
+import { useNetworkStatus } from '@/components/useNetworkStatus';
 
 /**
  * Detail screen component that displays a full-screen image with audio controls
@@ -20,6 +21,7 @@ export default function ImageDetailScreen() {
   const [isLoading, setIsLoading] = useState(false);
   
   const galleryItem = galleryData.find(item => item.id === id);
+  const isConnected = useNetworkStatus();
 
   /**
    * Cleanup audio resources
@@ -125,6 +127,7 @@ export default function ImageDetailScreen() {
   };
 
   return (
+    isConnected ? (
     <ThemedView style={styles.container}>
       <StatusBar style="auto" />
       
@@ -161,7 +164,12 @@ export default function ImageDetailScreen() {
         </TouchableOpacity>
       </ThemedView>
     </ThemedView>
-  );
+  ) : (
+    <ThemedView style={styles.container}>
+      <StatusBar style="auto" />
+      <ThemedText>No internet connection</ThemedText>
+    </ThemedView>
+  ));
 }
 
 const styles = StyleSheet.create({
