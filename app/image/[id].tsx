@@ -10,6 +10,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
 import { galleryData } from '@/types/gallery';
 import { useNetworkStatus } from '@/components/useNetworkStatus';
+import CustomStatusBar from '@/components/CustomStatusBar';
 
 /**
  * Detail screen component that displays a full-screen image with audio controls
@@ -129,7 +130,8 @@ export default function ImageDetailScreen() {
   return (
     isConnected ? (
     <ThemedView style={styles.container}>
-      <StatusBar style="auto" />
+      {/* <StatusBar style="auto" /> */}
+      <CustomStatusBar backgroundColor="rgba(0, 0, 0, 0.3)" barStyle="light-content" />
       
       {/* Back Button */}
       <TouchableOpacity
