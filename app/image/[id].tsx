@@ -105,15 +105,15 @@ export default function ImageDetailScreen() {
           source,
           {
             shouldPlay: true,
-            isLooping: false,
+            isLooping: true,
             volume: 1.0,
             progressUpdateIntervalMillis: 1000,
           }
         );
 
         newSound.setOnPlaybackStatusUpdate((status) => {
-          if (status.didJustFinish) {
-            setIsPlaying(false);
+          if (status.isLoaded) {
+            setIsPlaying(status.isPlaying);
           }
         });
 
@@ -169,7 +169,7 @@ export default function ImageDetailScreen() {
   ) : (
     <ThemedView style={styles.container}>
       <StatusBar style="auto" />
-      <ThemedText>No internet connection</ThemedText>
+      <ThemedText style={styles.noInternetText}>No internet connection</ThemedText>
     </ThemedView>
   ));
 }
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     ...StyleSheet.absoluteFillObject,
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    height: Dimensions.get('window').height+20,
   },
   overlay: {
     flex: 1,
@@ -217,5 +217,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  noInternetText: {
+    color: 'white',
+    fontSize: 24,
+    textAlign: 'center',
+    marginTop: 100,
   },
 });
