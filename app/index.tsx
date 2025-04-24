@@ -54,6 +54,14 @@ export default function GalleryScreen() {
         ]}>
           Cozey Leaf
         </ThemedText>
+        <ThemedText style={[
+          styles.default,
+          { color: colorScheme === 'dark' ? '#fff' : '#000' },
+          { fontSize: 12 },
+          { textAlign: 'right' },
+        ]}>
+          Alpha 1.0
+        </ThemedText>
       </View>
       <FlatList
         data={filteredData}
