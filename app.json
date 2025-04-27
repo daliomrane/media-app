@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "media-gallery-app",
-    "slug": "media-gallery-app",
+    "name": "Cozy Leaf",
+    "slug": "Cozy Leaf",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "Cozy Leaf",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -32,7 +32,8 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "backgroundColor": "#0b101f"
     },
     "plugins": [
       "expo-router",

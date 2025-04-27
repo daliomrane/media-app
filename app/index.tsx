@@ -52,7 +52,7 @@ export default function GalleryScreen() {
           styles.title,
           { color: colorScheme === 'dark' ? '#fff' : '#000' }
         ]}>
-          Cozey Leaf
+          Cozy Leaf
         </ThemedText>
         <ThemedText style={[
           styles.default,
