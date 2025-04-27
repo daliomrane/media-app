@@ -27,7 +27,7 @@
         "FOREGROUND_SERVICE",
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ],
-      "package": "com.anonymous.mediagalleryapp"
+      "package": "com.cozyleafapp.cozyleaf"
     },
     "web": {
       "bundler": "metro",

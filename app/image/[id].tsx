@@ -1,5 +1,5 @@
 import { useLocalSearchParams, router } from 'expo-router';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import { StyleSheet, TouchableOpacity, Dimensions, BackHandler } from 'react-native';
 import { Image } from 'expo-image';
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     ...StyleSheet.absoluteFillObject,
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height+20,
+    height: Dimensions.get('window').height,
   },
   overlay: {
     flex: 1,
