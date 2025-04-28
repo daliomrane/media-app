@@ -11,6 +11,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { galleryData } from '@/types/gallery';
 import { useNetworkStatus } from '@/components/useNetworkStatus';
 import CustomStatusBar from '@/components/CustomStatusBar';
+import * as NavigationBar from 'expo-navigation-bar';
 
 /**
  * Detail screen component that displays a full-screen image with audio controls
@@ -53,7 +54,7 @@ export default function ImageDetailScreen() {
   useFocusEffect(
     useCallback(() => {
       let backHandler: any;
-
+      NavigationBar.setVisibilityAsync('hidden');
       const setupScreen = async () => {
         // Setup audio
         await Audio.setAudioModeAsync({
@@ -146,7 +147,7 @@ export default function ImageDetailScreen() {
       <Image
         source={galleryItem.imageUrl}
         style={styles.backgroundImage}
-        contentFit="cover"
+        contentFit="fill"
       />
 
       {/* Overlay Content */}
@@ -181,7 +182,6 @@ const styles = StyleSheet.create({
   backgroundImage: {
     ...StyleSheet.absoluteFillObject,
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
   },
   overlay: {
     flex: 1,
