@@ -38,11 +38,12 @@ export default function RootLayout() {
           headerShown: false,
         }} 
       />
-      <Stack screenOptions={{ 
-      headerShown: false // This will hide the header bar completely
-    }}>
-      <Stack.Screen name="[id]" />
-      </Stack>
+
+      <Stack.Screen 
+      name="image/[id]" 
+      options={{ 
+        headerShown: false, 
+      }} />
 
     </Stack>
   );
