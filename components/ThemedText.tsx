@@ -25,7 +25,7 @@ export function ThemedText({
       style={[
         styles.base,
         styles[type],
-        { color: isDark ? '#fff' : '#000' },
+        { color: isDark ? '#fff' : '#fff' },
         style,
       ]}
       {...rest}

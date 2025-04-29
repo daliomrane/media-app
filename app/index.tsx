@@ -46,17 +46,17 @@ export default function GalleryScreen() {
 
   return (
     <ThemedView style={styles.container}>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <View style={styles.headerContainer}>
         <ThemedText style={[
           styles.title,
-          { color: colorScheme === 'dark' ? '#fff' : '#000' }
+          { color: colorScheme === 'dark' ? '#fff' : '#fff' }
         ]}>
           Cozy Leaf
         </ThemedText>
         <ThemedText style={[
           styles.default,
-          { color: colorScheme === 'dark' ? '#fff' : '#000' },
+          { color: colorScheme === 'dark' ? '#fff' : '#fff' },
           { fontSize: 12 },
           { textAlign: 'right' },
         ]}>
