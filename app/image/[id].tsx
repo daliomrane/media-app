@@ -147,7 +147,7 @@ export default function ImageDetailScreen() {
       <Image
         source={galleryItem.imageUrl}
         style={styles.backgroundImage}
-        contentFit="fill"
+        contentFit="contain"
       />
 
       {/* Overlay Content */}
@@ -178,6 +178,7 @@ export default function ImageDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#0b101f'
   },
   backgroundImage: {
     ...StyleSheet.absoluteFillObject,
@@ -188,7 +189,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingTop: 40,
-    paddingBottom: 50,
+    paddingBottom: 10,
     backgroundColor: 'rgba(0,0,0,0.3)',
   },
   title: {
@@ -197,18 +198,21 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0,0,0,0.75)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 5,
+    textAlign:'center',
+    margin:10
   },
   playButton: {
     width: 64,
     height: 64,
-    borderRadius: 32,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    borderRadius: 24,
+    //backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(226, 143, 18, 0.8)',
     justifyContent: 'center',
     alignItems: 'center',
   },
   backButton: {
     position: 'absolute',
-    top: 40,
+    top: 30,
     left: 20,
     zIndex: 10,
     width: 44,
