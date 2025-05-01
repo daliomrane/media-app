@@ -55,6 +55,7 @@ export default function ImageDetailScreen() {
     useCallback(() => {
       let backHandler: any;
       NavigationBar.setVisibilityAsync('hidden');
+      NavigationBar.setBehaviorAsync('overlay-swipe');
       const setupScreen = async () => {
         // Setup audio
         await Audio.setAudioModeAsync({
@@ -205,7 +206,6 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 24,
-    //backgroundColor: 'rgba(0,0,0,0.5)',
     backgroundColor: 'rgba(226, 143, 18, 0.8)',
     justifyContent: 'center',
     alignItems: 'center',
