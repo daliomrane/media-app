@@ -130,7 +130,7 @@ export default function ImageDetailScreen() {
   };
 
   return (
-    isConnected ? (
+    isConnected || typeof galleryItem.imageUrl === 'number' ? (
     <ThemedView style={styles.container}>
       {/* <StatusBar style="auto" /> */}
       <CustomStatusBar backgroundColor="rgba(0, 0, 0, 0.3)" barStyle="light-content" />
